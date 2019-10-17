@@ -26,8 +26,9 @@ class Home extends React.Component<any, any>  {
   handleChange(event: any) {
     this.setState({ value: event.target.value }, () => { });
   }
-  checkEmailInput = (value: any) => {
-    const regEx = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+  checkEmailInput = () => {
+    let value = this.state.value
+    const regEx = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     let emails = value.replace(/\s/g, "").split(/,|;/);
     let invalidEmails: any[] = [];
     let validEmails: any[] = [];
@@ -69,11 +70,12 @@ class Home extends React.Component<any, any>  {
     return (
       <React.Fragment>
         <div className="center">
-          <input type="text" value={this.state.value} onBlur={e => this.checkEmailInput(e.target.value)} onChange={(e) => { this.handleChange(e) }} placeholder="enter all the emails"></input>
+          <input type="text" value={this.state.value} onChange={(e) => { this.handleChange(e) }} placeholder="enter all the emails"></input>
           {invalidEmails}
           <div className="passed">
             {validEmails}
           </div>
+          <button onClick={() => this.checkEmailInput()} >VALIDATE</button>
         </div>
       </React.Fragment>
     );
