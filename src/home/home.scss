@@ -23,3 +23,28 @@ button {
   color: white;
   margin-top: 20px;
 }
+.error {
+  margin-top: 20px;
+  background-color: red;
+  width: 60%;
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+}
+.passed {
+  display: block;
+  background: green;
+  width: 56%;
+  margin: 4px 0px;
+}
+.data {
+  display: block;
+  border: 1px solid #002366;
+  width: 100%;
+  border-radius: 4px;
+  padding: 9px 12px;
+  margin: 0px;
+}
+p {
+  display: block;
+}
